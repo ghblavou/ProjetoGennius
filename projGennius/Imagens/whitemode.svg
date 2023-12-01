@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="162.572mm" height="23.7062mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 16386 2389"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <font id="FontID0" horiz-adv-x="652" font-variant="normal" style="fill-rule:nonzero" font-weight="900">
+	<font-face 
+		font-family="Lovelo Black">
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="U" horiz-adv-x="671"><path d="M593.002 248.999l0 466.001 -142.003 0 0 -465.001c0,-149.999 -231.998,-149.999 -231.998,0l0 465.001 -143 0 0 -466.001c0,-339.999 517.001,-339.999 517.001,0l0 0z"/></glyph>
+   <glyph unicode="I" horiz-adv-x="303"><path d="M223.001 0l0 715.001 -143 0 0 -715.001 143 0 0 0z"/></glyph>
+   <glyph unicode="/" horiz-adv-x="421"><path d="M147.999 0l281 715.001 -147.999 0 -281 -715.001 147.999 0 0 0z"/></glyph>
+   <glyph unicode="N" horiz-adv-x="704"><path d="M223.001 389l0 0 362.001 -403.999 37.9985 0 0 728.999 -144.001 0 0 -403.999 -361 419.999 -37.9985 0 0 -730 143 0 0 389 0 0z"/></glyph>
+   <glyph unicode="E" horiz-adv-x="504"><path d="M450.001 0l0 0 0 143 -227.001 0 0 143 187.998 0 0 143 -187.998 0 0 143 215.001 0 0 143 -358.001 0 0 -715.001 370.001 0z"/></glyph>
+   <glyph unicode="g" horiz-adv-x="672"><path d="M596.001 44.0003l0 0 0 314 -145.002 0 0 -215.001c-12.9975,-2.00175 -26.9993,-4.00003 -40.0003,-4.00003 -275.998,0 -288.999,426.999 0,437 76.0005,1.99828 122.003,-14.0018 150.003,-26.0019l16.9975 145.002c-12.9975,4.00003 -81.9988,29.0011 -167,25.9984 -496,-17.9984 -472,-724.999 0,-724.999 68.0005,0 130.003,17.001 185.002,48.0003z"/></glyph>
+   <glyph unicode="S" horiz-adv-x="529"><path d="M46.9995 45.9986c97.0015,-49.9986 186,-54.9995 226,-51.9969 133.999,6.99918 216.001,97.9989 216.001,216.999 0,113.999 -96.0007,178 -207.001,219.001 -41.0011,13.9984 -76.0005,32.0002 -80.0006,72.0005 -2.99915,39.9968 20.0001,76.9979 70.9996,79.9971 22.0019,1.00087 66.9996,2.00175 145.999,-29.9985l18.0019 137.999c-92.0006,32.0002 -141.002,32.0002 -178,30.0019 -119,-6.00177 -202,-98.0024 -202,-218 0,-120.001 99.9972,-177.002 211.998,-218.003 40.0003,-13.9984 70.9996,-32.0002 74.0022,-72.9979 4.00003,-38.9994 -32.0002,-69.0013 -74.0022,-72.0005 -32.9976,-2.99915 -121.999,-1.00087 -203.998,57.0013l-18.0019 -150.003 0 0z"/></glyph>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Lovelo Black";src:url("#FontID0") format(svg)}
+    .str0 {stroke:#5CE1E6;stroke-width:20.1584}
+    .fil1 {fill:#5CE1E6}
+    .fil0 {fill:#7949EE}
+    .fnt0 {font-weight:900;font-size:2910.35px;font-family:'Lovelo Black'}
+    .fnt1 {font-weight:900;font-size:3022.36px;font-family:'Lovelo Black'}
+   ]]>
+  </style>
+ </defs>
+ <g id="Camada_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g transform="matrix(0.991259 0 0 1 -6425.82 2001.02)">
+   <text x="8129" y="124"  class="fil0 fnt0">gENNIUS</text>
+  </g>
+  <path class="fil1 str0" d="M14859 313c479,186 959,371 1438,557 20,8 40,15 60,23 22,8 19,3 19,26l0 55c-1,107 -2,214 -3,321 -2,14 -1,21 -16,27l-1501 571 0 -406 1012 -385 -1009 -383 0 -406z"/>
+  <path class="fil1 str0" d="M1527 320c-479,185 -959,371 -1438,556 -20,8 -40,16 -60,24 -22,8 -19,3 -19,26l0 54c1,107 2,214 3,321 2,14 1,22 16,27l1501 571 0 -405 -1012 -385 1009 -384 0 -405z"/>
+  <text x="13528" y="2191"  class="fil1 fnt1">/</text>
+ </g>
+</svg>

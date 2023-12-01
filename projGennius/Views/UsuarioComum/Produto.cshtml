@@ -1,0 +1,74 @@
+﻿@model IEnumerable<projGennius.Models.clProduto>
+
+@{
+    ViewBag.Title = "Produto";
+}
+<div class="container text-center">
+    <h2>Sites Feitos</h2>
+</div>
+<hr />
+
+@foreach (var item in Model)
+{
+    @Html.HiddenFor(modelItem => item.codProd)
+    <div class="container">
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <section class="py-5">
+            <div class="container">
+                <div class="row gx-5">
+                    <aside class="col-md-5">
+                        <img class="projcard-img d-lg-block w-10 img-fluid" src="@item.imagemProd" alt="Imagem do site">
+                    </aside>
+                    <main class="col-md-6">
+                        <div class="ps-md-3 mb-5">
+                            <h4 class="title text-dark">
+                                @Html.DisplayFor(modelItem => item.catProd)
+                                <hr />
+                            </h4>
+
+                            <span class="text-muted">Transforme seu Mercado: Descubra o Poder do Nosso Ecommerce para Facilitar Suas Compras!</span>
+
+                        </div>
+
+
+                        <p>
+                            @Html.DisplayFor(modelItem => item.descricaoProd)
+                        </p>
+                        <div class="row">
+                            <dt class="col-3">Tipo:</dt>
+                            <dd class="col-9">Plataforma Ecommerce</dd>
+
+                            <dt class="col-3">Recursos</dt>
+                            <dd class="col-9">Navegação Intuitiva, Pagamento Seguro, Gerenciamento de Produtos</dd>
+
+                            <dt class="col-3">Integrações</dt>
+                            <dd class="col-9">Compatível com Diversos Métodos de Pagamento, Ferramentas Analíticas</dd>
+
+                            <dt class="col-3">Suporte</dt>
+                            <dd class="col-9">Assistência 24h</dd>
+                        </div>
+
+                        <hr />
+
+                        <a class="btn btn-light border border-secondary py-2 px-3">R$1.500,00</a>
+                        @Html.ActionLink("Comprar", "Pagamento", "UsuarioComum", new { id = item.codProd }, new { @class = "btn btn-success float-end ms-2" })
+                    </main>
+                </div>
+            </div>
+        </section>
+        <br />
+    </div>
+    <hr />
+    <style>
+        .icon-hover:hover {
+            border-color: #3b71ca !important;
+            background-color: white !important;
+            color: #3b71ca !important;
+        }
+
+            .icon-hover:hover i {
+                color: #3b71ca !important;
+            }
+    </style>
+
+}

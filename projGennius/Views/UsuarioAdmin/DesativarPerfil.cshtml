@@ -1,0 +1,26 @@
+﻿@model IEnumerable<projGennius.Models.clUsuario>
+
+@{
+    ViewBag.Title = "Desativar Perfil";
+}
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $(".btnDesativar").on("click", function () {
+                var codUsu = $(this).siblings("[name='codUsu']").val();
+
+                $.ajax({
+                    type: "POST",
+                    url: "/UsuarioAdmin/DesativarPerfil",
+                    data: { codUsu: codUsu },
+                    success: function () {
+                        window.location.reload(); // Recarrega a página após desativar
+                    },
+                    error: function () {
+                        alert("Erro ao desativar o usuário.");
+                    }
+                });
+            });
+        });
+    </script>
+}

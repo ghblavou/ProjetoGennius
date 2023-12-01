@@ -1,0 +1,100 @@
+﻿@model IEnumerable<projGennius.Models.clUsuario>
+
+@{
+    ViewBag.Title = "Perfil Comum";
+}
+
+
+
+
+@foreach (var item in Model)
+{
+    @Html.HiddenFor(modelItem => item.codUsu)
+
+
+    <div class="pt-3 ps-2 pb-2">
+        <h2>Cliente</h2>
+    </div>
+
+    <section style="background-color: #eee;">
+        @Html.ActionLink("Voltar", "PublisAceitas", "UsuarioPestador", new { @class = "btn btn-outline-primary ms-3 mt-3" })
+
+        <div class="container py-3">
+
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card mb-4">
+                        <div class="card-body text-center">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                                 class="rounded-circle img-fluid" style="width: 150px;">
+                            <h5 class="my-3">@Html.DisplayFor(modelItem => item.nome) </h5>
+                            <p class="text-muted mb-1">Usuário Comum</p>
+                            <div class="d-flex justify-content-center mb-2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-4 mb-lg-0">
+                        <div class="card-body p-0">
+                            <ul class="list-group list-group-flush rounded-3">
+                                <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                                    <img src="~/Imagens/whatsapp.svg" />
+                                    <a class="mb-0" href="@ViewBag.Link@Html.DisplayFor(modelItem => item.telefone)" target="_blank">
+                                        @Html.DisplayFor(modelItem => item.telefone)
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Login</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">
+                                        @Html.DisplayFor(modelItem => item.login)
+                                    </p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Tipo</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">Usuário Comum</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Empresa</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">
+                                        @Html.DisplayFor(modelItem => item.empresaCli)
+                                    </p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Status</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">
+                                        @Html.DisplayFor(modelItem => item.sta)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}

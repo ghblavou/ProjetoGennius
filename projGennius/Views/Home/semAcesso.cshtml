@@ -1,0 +1,19 @@
+﻿<div class="p-5">
+    <h2>Você não tem acesso a essa página.</h2>
+
+    @if (Session["tipoLogado1"] != null)
+    {
+        @Html.ActionLink("Voltar", "Index", "UsuarioComum", new { @class = "text-center btn btn-primary m-5" });
+
+    }
+    else if (Session["tipoLogado2"] != null)
+    {
+        @Html.ActionLink("Voltar", "Index", "UsuarioPrestador", new { @class = "text-center btn btn-primary m-5" });
+
+    }
+    else
+    {
+        @Html.ActionLink("Voltar para a página inical", "Index", "Home", new { @class = "text-center btn btn-primary m-5" });
+    }
+
+</div>

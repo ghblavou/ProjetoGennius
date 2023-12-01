@@ -1,0 +1,31 @@
+﻿@model IEnumerable<projGennius.Models.clPublicacao>
+
+@{
+    ViewBag.Title = "Excluir Publicação";
+}
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $("#btnConfirmarExcluir").on("click", function () {
+                var id = @Html.Raw(Json.Encode(ViewBag.codPubli));
+
+                $.ajax({
+                    type: "POST",
+                    url: "/UsuarioAdmin/ConfirmarExcluir",
+                    data: { id: id },
+                    success: function () {
+                        window.location.href = "/UsuarioAdmin/Index";
+                    },
+                    error: function () {
+                        alert("Erro ao excluir a publicação.");
+                    }
+                });
+            });
+        });
+    </script>
+}
+
+<h2>Confirmação de Exclusão</h2>
+<p>Você tem certeza que deseja excluir esta publicação?</p>
+<button id="btnConfirmarExcluir" class="btn btn-danger">Confirmar Exclusão</button>

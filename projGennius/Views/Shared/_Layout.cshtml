@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Meu Aplicativo ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @*@Styles.Render("~/Css/footer")*@
+</head>
+<body style="background: linear-gradient(to bottom right, #7949EE, #C51BE0); min-height: 100vh ">
+    <nav class="navbar navbar-white bg-white position-fixed w-100 d-flex" style="top: 0; z-index: 1;">
+        @if (Session["tipoLogado1"] != null)
+        {
+            <div>
+                <a class="m-auto ms-5" href="@Url.Action("Index", "UsuarioComum")">
+                    <img src="~/Imagens/whitemode.png" style="max-height: 20px;" alt="Imagem da logotipo da Gennius" />
+                </a>
+
+            </div>
+        }
+        else if (Session["tipoLogado2"] != null)
+        {
+            <div>
+                <a class="m-auto ms-5" href="@Url.Action("Index", "UsuarioPrestador")">
+                    <img src="~/Imagens/whitemode.png" style="max-height: 20px;" alt="Imagem da logotipo da Gennius" />
+                </a>
+
+            </div>
+        }
+        else if (Session["tipoLogado3"] != null)
+        {
+            <div>
+                <a class="m-auto ms-5" href="@Url.Action("Index", "UsuarioAdmin")">
+                    <img src="~/Imagens/whitemode.png" style="max-height: 20px;" alt="Imagem da logotipo da Gennius" />
+                </a>
+
+            </div>
+        }
+        else
+        {
+            <div>
+                <a class="m-auto ms-5" href="@Url.Action("Login", "Home")">
+                    <img src="~/Imagens/whitemode.png" style="max-height: 20px;" alt="Imagem da logotipo da Gennius" />
+                </a>
+
+            </div>
+        }
+
+        <div>
+            <ul class="navbar-nav me-5">
+                @if (Session["usuarioLogado"] == null)
+                {
+                    <li>@Html.ActionLink("Entrar", "Login", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                }
+                else
+                {
+
+                    <li>@Html.ActionLink("Sair", "Logout", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                }
+
+            </ul>
+        </div>
+
+    </nav>
+
+
+    @* sidebar here  *@
+
+    <style>
+        #sidebar li {
+            height: 40px;
+            border-radius: 10px;
+            padding: 0 0 0 5%;
+            margin-bottom: 1%;
+        }
+
+            #sidebar li:hover {
+                background-color: #eee;
+            }
+
+        .active {
+            background-color: #eee;
+        }
+
+        #link {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        footer {
+            padding-block: 40px;
+            background-color: #ebf2fa;
+        }
+
+
+
+        .link-column {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-left: 10%;
+        }
+
+
+        .footer-container {
+            align-items: flex-start;
+        }
+    </style>
+
+
+    <div class="p-3 bg-white position-fixed flex-column d-flex justify-content-between rounded-end" style="height: 100%; width: 280px; margin-top: 56px; top: 0;">
+        <div class="align-content-start">
+            <ul class="list-unstyled ps-0 d-block" id="sidebar">
+                @if (Session["tipoLogado1"] != null)
+                {
+                    <li>@Html.ActionLink("Página Inicial", "Index", "UsuarioComum", new { area = "" }, new { @class = "nav-link", id = "link" })</li>
+                    <li>@Html.ActionLink("Minhas publicações", "MinhasPublicacoes", "UsuarioComum", new { area = "" }, new { @class = "nav-link", id = "link" })</li>
+                    <li>@Html.ActionLink("Nova publicação", "CriarPubli", "UsuarioComum", new { area = "" }, new { @class = "nav-link", id = "link" })</li>
+                    <li>@Html.ActionLink("Sites disponíveis", "Produto", "UsuarioComum", new { area = "" }, new { @class = "nav-link", id = "link" })</li>
+                    <li>@Html.ActionLink("Meu Perfil", "MeuPerfil", "UsuarioComum", new { area = "" }, new { @class = "nav-link", id = "link" })</li>
+                }
+                @if (Session["tipoLogado2"] != null)
+                {
+                    <li>@Html.ActionLink("Página Inicial", "Index", "UsuarioPrestador", new { area = "" }, new { @class = "nav-link", id = "link" })</li>
+                    <li>@Html.ActionLink("Serviços Aceitos", "PublisAceitas", "UsuarioPrestador", new { area = "" }, new { @class = "nav-link", id = "link" })</li>
+                    <li>@Html.ActionLink("Meu Perfil", "MeuPerfil", "UsuarioPrestador", new { area = "" }, new { @class = "nav-link", id = "link" })</li>
+
+                }
+                @if (Session["tipoLogado3"] != null)
+                {
+                    <li>@Html.ActionLink("Página Inicial", "Index", "UsuarioAdmin", new { area = "" }, new { @class = "nav-link", id = "link" })</li>
+                    <li>@Html.ActionLink("Publicações Aprovadas", "PubliAprovada", "UsuarioAdmin", new { area = "" }, new { @class = "nav-link", id = "link" })</li>
+                    <hr />
+                    <li>@Html.ActionLink("Administradores Cadastrados", "AdminsCadastrados", "UsuarioAdmin", new { area = "" }, new { @class = "nav-link", id = "link" })</li>
+                    <li>@Html.ActionLink("Clientes Cadastrados", "UsuariosCadastrados", "UsuarioAdmin", new { area = "" }, new { @class = "nav-link", id = "link" })</li>
+                    <li>@Html.ActionLink("Desenvolvedores Cadastrados", "DevCadastrado", "UsuarioAdmin", new { area = "" }, new { @class = "nav-link", id = "link" })</li>
+                    <li>@Html.ActionLink("Postar produto", "VendaSite", "UsuarioAdmin", new { area = "" }, new { @class = "nav-link", id = "link" })</li>
+
+                }
+
+
+                @if (ViewBag.homeUsu != null)
+                {
+                    <li>@Html.ActionLink("Página Inicial", "Login", "Home", new { area = "" }, new { @class = "nav-link", id = "link" })</li>
+                    <li>@Html.ActionLink("Minhas publicações", "Login", "Home", new { area = "" }, new { @class = "nav-link", id = "link" })</li>
+                    <li>@Html.ActionLink("Nova publicação", "Login", "Home", new { area = "" }, new { @class = "nav-link", id = "link" })</li>
+                    <li>@Html.ActionLink("Sites disponíveis", "Login", "Home", new { area = "" }, new { @class = "nav-link", id = "link" })</li>
+                    <li>@Html.ActionLink("Meu Perfil", "Login", "Home", new { area = "" }, new { @class = "nav-link", id = "link" })</li>
+
+                }
+                @if (ViewBag.homePres != null)
+                {
+                    <li>@Html.ActionLink("Página Inicial", "Login", "Home", new { area = "" }, new { @class = "nav-link", id = "link" })</li>
+                    <li>@Html.ActionLink("Serviços Aceitos", "Login", "Home", new { area = "" }, new { @class = "nav-link", id = "link" })</li>
+
+                }
+
+
+            </ul>
+
+        </div>
+
+        <div class="align-content-end mb-5">
+            <hr />
+
+
+            @if (Session["nomeUsu"] != null)
+            {
+                <p class="justify-content-end">Olá, @Session["nomeUsu"]!</p>
+            }
+            else if (ViewBag.homeUsu != null)
+            {
+                <p class="justify-content-end">Seja bem vindo @ViewBag.homeUsu!</p>
+
+            }
+            else if (ViewBag.homePres != null)
+            {
+                <p class="justify-content-end">Seja bem vindo @ViewBag.homePres!</p>
+            }
+
+        </div>
+    </div>
+
+    @* conteudo *@
+    <section style="margin-left: 280px;">
+        <div class="container body-content bg-white col-lg-11 rounded-1 mb-2 p-2" style="margin-top: 70px;">
+            @RenderBody()
+            <hr />
+
+
+            <footer style="padding-bottom: 0">
+                <div>
+                    <div class="container d-flex footer-container pb-3">
+                        <div style="padding-top:4px; padding-left: 5%;">
+                            <img src="~/Imagens/whitemode.png" style="height:25px;" />
+                        </div>
+                        <div class="link-column d-flex">
+                            <h4>Contato</h4>
+                            <div class="d-flex align-items-center">
+                                <img src="~/Imagens/envelope.svg" class="me-2" />
+                                <p style="margin: 0 !important;">gennius.contato@gmail.com</p>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </footer>
+            @*<footer class="p-2">
+                    <p>&copy; @DateTime.Now.Year - Meu Aplicativo ASP.NET</p>
+                </footer>*@
+        </div>
+
+
+    </section>
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script>
+    </script>
+</body>
+</html>

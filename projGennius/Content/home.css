@@ -1,0 +1,118 @@
+/* Reset de estilos para remoção de margens e preenchimentos padrão */
+body, h1, h2, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos gerais do corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #7949EE;
+    /*background: linear-gradient(to bottom, #7949EE, #C51BE0);*/
+    line-height: 1.6;
+}
+
+/* Estilos do cabeçalho */
+header {
+    background-color: white;
+    color: rgb(151, 12, 151);
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+    nav .logo {
+        font-size: 24px;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+    }
+
+    nav li {
+        margin-right: 20px;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+    }
+
+/* Estilos da seção de herói */
+.hero {
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    text-align: center;
+    padding: 60px 0;
+}
+
+    .hero h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .hero p {
+
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #5CE1E6;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+    .cta-button:hover {
+        background-color: white;
+        color: #5CE1E6;
+    }
+
+/* Estilos da seção de recursos */
+.features {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+    text-align: center;
+}
+
+    .features h2 {
+        font-size: 24px;
+        margin-bottom: 40px;
+    }
+
+.feature {
+    margin-bottom: 40px;
+}
+
+    .feature h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+
+
+/*Classe button gennius*/
+.button-g {
+    color: #fff;
+    background-color: #7949EE !important;
+    border: none !important;
+}
+    .button-g:hover {
+        background-color: #552dba !important;
+    }

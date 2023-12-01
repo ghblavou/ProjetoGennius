@@ -1,0 +1,59 @@
+﻿@model projGennius.Models.clProduto
+
+@{
+    ViewBag.Title = "VendaSite";
+}
+<div class="container">
+    <h2>Cadastrar Site</h2>
+
+    @using (Html.BeginForm("VendaSite", "UsuarioAdmin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(modelItem => Model.codUsu)
+
+
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group mb-2">
+                @Html.LabelFor(model => model.catProd, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.catProd, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.catProd, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group mb-2">
+                @Html.LabelFor(model => model.descricaoProd, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.descricaoProd, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.descricaoProd, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group center mb-2">
+                <div>
+                    <label class="control-label col-md-2" for="file1">Insira o template do site</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="file" name="file" id="file" /> <br />
+                </div>
+
+            </div>
+
+            <div class="form-group center">
+                <div class="col-md-10">
+                    @ViewBag.msg <br />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Adicionar produto" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+    }
+
+</div>

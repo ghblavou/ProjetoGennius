@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "Tipo de Usuário";
+    Layout = null;
+}
+
+
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<body style="background: #7949EE; min-height: 100vh">
+
+    <nav class="navbar navbar-white bg-white rounded-bottom" style="min-height: 60px;">
+
+        <a class="m-auto" href="@Url.Action("Index", "Home")">
+            <img src="~/Imagens/whitemode.png" style="max-height: 25px;" alt="Imagem da logotipo da Gennius" />
+        </a>
+
+    </nav>
+
+
+    <section class="container body-content p-5 rounded-4 col-lg-6 col-10" style="background-color: #fff; margin-top: 15vh; margin-bottom: 15vh;">
+
+
+        @ViewBag.confHome
+        @ViewBag.msgLogar
+
+        <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+            @using (Html.BeginForm("tipoUsu", "Home", FormMethod.Post))
+            {
+                <h2>Selecione o tipo de usuário</h2>
+                <br />
+
+                @Html.DropDownList("TipoUsuario", new List<SelectListItem>
+                 {
+                     new SelectListItem { Text = "Prestador", Value = "Prestador" },
+                     new SelectListItem { Text = "Usuário Comum", Value = "Usuario" }
+                 },
+                      "Selecione um tipo de usuário", new { @class = "form-select" })
+                <br />
+
+                <div>
+                    <input type="submit" style="color: white; background-color: #5CE1E6; border: none;" class="button button-a button-lg button-rounded rounded-3 p-2" value="Entrar" />
+                </div>
+
+
+            }
+        </div>
+        <br />
+        <br />
+
+
+    </section>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+</body>
+</html>

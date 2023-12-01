@@ -1,0 +1,45 @@
+﻿@model IEnumerable<projGennius.Models.clPublicacao>
+
+@{
+    ViewBag.Title = "Publicações aprovadas";
+}
+
+
+
+
+<div class="section p-2 border border-black rounded-2 p-2">
+    <h2 class="text-center">Publicações aprovadas</h2>
+    @if (Model.Any())
+    {
+        foreach (var item in Model)
+        {
+            @Html.HiddenFor(modelItem => item.codPubli);
+            <div class="col-11 border border-black rounded-2 p-2 mx-5" style="margin:1% 1%">
+                <h2>@Html.DisplayFor(modelItem => item.empresaCLi)</h2>
+                <p>
+                    @Html.DisplayFor(modelItem => item.descricao)
+                </p>
+                <div>
+                    <div class="w-auto d-flex float-start">
+                        <div class="btn btn-outline-info">
+                            @Html.DisplayFor(modelItem => item.catPubli)
+                        </div>
+                    </div>
+                    <div class="float-end">
+                        @*Para caso clique em aceito e queira voltar atrás*@
+                        @Html.ActionLink("Recusar", "RecusarPubli", new { id = item.codPubli }, new { @class = "btn btn-danger float-end ms-2" })
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+
+        }
+    }
+    else
+    {
+        <div class="container"><h2>Não há publicações</h2></div>
+
+    }
+</div>
+

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<projGennius.Models.clPublicacao>
+
+@{
+    ViewBag.Title = "Página Inicial";
+}
+
+    
+<div class="section p-2 rounded-2 p-2">
+    @if (Model.Any())
+    {
+        foreach (var item in Model)
+        {
+           
+            <div class="col-12 border border-black rounded-2 p-2 mx-1 bg-white" style="margin:1% 1%">
+                @Html.HiddenFor(modelItem => item.codPubli)
+                <h2>@Html.DisplayFor(modelItem => item.empresaCLi)</h2>
+                <p>
+                    @Html.DisplayFor(modelItem => item.descricao)
+                </p>
+                <div>
+                    <div class="w-auto d-flex float-start">
+                        <div class="btn btn-outline-info">
+                            @Html.DisplayFor(modelItem => item.catPubli)
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+
+        }
+    }
+    else
+    {
+        <div class="container"><h2>Não há publicações</h2></div>
+
+    }
+
+</div>                            
